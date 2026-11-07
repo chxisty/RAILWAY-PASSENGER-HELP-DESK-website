@@ -1,0 +1,1669 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *, .theme-dark, .theme-dark *, [data-theme="dark"], [data-theme="dark"] *));
+
+/* ======================================================== */
+/* 1. CENTRALIZED SEMANTIC THEME SYSTEM (WCAG 2.2 AA)       */
+/* ======================================================== */
+
+:root {
+  /* Default System Tokens (Sunrise Railway Light Mode Default) */
+  --background: #FAF5ED;
+  --foreground: #251B32;
+  --card: #FFFFFF;
+  --card-foreground: #251B32;
+  --popover: #FFFFFF;
+  --popover-foreground: #251B32;
+  --primary: #E9793D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3EBDD;
+  --secondary-foreground: #251B32;
+  --muted: #F3EBDD;
+  --muted-foreground: #56495C;
+  --accent: #D99A43;
+  --accent-foreground: #FFFFFF;
+  --accent-soft: rgba(233, 121, 61, 0.14);
+  --border: #E7D5C1;
+  --border-subtle: #EFE6D9;
+  --input: #FFFFFF;
+  --input-foreground: #251B32;
+  --input-border: #E7D5C1;
+  --ring: #E9793D;
+  --success: #13875C;
+  --success-foreground: #FFFFFF;
+  --success-bg: #DCFCE7;
+  --warning: #92400E;
+  --warning-foreground: #FFFFFF;
+  --warning-bg: #FEF3C7;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --destructive-bg: #FEE2E2;
+
+  /* Direct aliases */
+  --bg-main: var(--background);
+  --bg-secondary: var(--secondary);
+  --bg-card: var(--card);
+  --bg-elevated: #FFFDF9;
+  --text-primary: var(--foreground);
+  --text-secondary: var(--muted-foreground);
+  --border-color: var(--border);
+  --accent-primary: var(--primary);
+  --accent-secondary: var(--accent);
+  --color-success: var(--success);
+
+  /* Quick Date Button Theme Variables */
+  --quick-date-bg: #F3EBDD;
+  --quick-date-text: #251B32;
+  --quick-date-border: #E7D5C1;
+  --quick-date-hover-bg: #EAE0CF;
+  --quick-date-hover-text: #191222;
+  --quick-date-active-bg: #E9793D;
+  --quick-date-active-text: #FFFFFF;
+  --quick-date-active-border: #E9793D;
+
+  /* Legacy aliases for backward compatibility */
+  --bg-primary: var(--background);
+}
+
+/* --- LIGHT THEME (Sun / Golden Hour / Warm Ivory) --- */
+html.theme-light,
+[data-theme="light"] {
+  --background: #FAF5ED;
+  --foreground: #251B32;
+  --card: #FFFFFF;
+  --card-foreground: #251B32;
+  --popover: #FFFFFF;
+  --popover-foreground: #251B32;
+  --primary: #E9793D;
+  --primary-foreground: #FFFFFF;
+  --secondary: #F3EBDD;
+  --secondary-foreground: #251B32;
+  --muted: #F3EBDD;
+  --muted-foreground: #56495C;
+  --accent: #D99A43;
+  --accent-foreground: #FFFFFF;
+  --accent-soft: rgba(233, 121, 61, 0.14);
+  --border: #E7D5C1;
+  --border-subtle: #EFE6D9;
+  --input: #FFFFFF;
+  --input-foreground: #251B32;
+  --input-border: #E7D5C1;
+  --ring: #E9793D;
+  --success: #13875C;
+  --success-foreground: #FFFFFF;
+  --success-bg: #DCFCE7;
+  --warning: #92400E;
+  --warning-foreground: #FFFFFF;
+  --warning-bg: #FEF3C7;
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --destructive-bg: #FEE2E2;
+
+  --bg-main: #FAF5ED;
+  --bg-secondary: #F3EBDD;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #FFFDF9;
+  --text-primary: #251B32;
+  --text-secondary: #56495C;
+  --border-color: #E7D5C1;
+  --border-subtle: #EFE6D9;
+  --accent-primary: #E9793D;
+  --accent-secondary: #D99A43;
+  --color-success: #13875C;
+
+  /* Quick Date Button Theme Variables - Light Mode */
+  --quick-date-bg: #F3EBDD;
+  --quick-date-text: #251B32;
+  --quick-date-border: #E7D5C1;
+  --quick-date-hover-bg: #EAE0CF;
+  --quick-date-hover-text: #191222;
+  --quick-date-active-bg: #E9793D;
+  --quick-date-active-text: #FFFFFF;
+  --quick-date-active-border: #E9793D;
+
+  --bg-primary: #FAF5ED;
+}
+
+/* --- DARK THEME (Moon / Midnight Plum / Charcoal) --- */
+html.dark,
+html.theme-dark,
+[data-theme="dark"] {
+  --background: #100D19;
+  --foreground: #FFF8F0;
+  --card: #211A2D;
+  --card-foreground: #FFF8F0;
+  --popover: #211A2D;
+  --popover-foreground: #FFF8F0;
+  --primary: #F18445;
+  --primary-foreground: #FFFFFF;
+  --secondary: #211A2D;
+  --secondary-foreground: #FFF8F0;
+  --muted: #191426;
+  --muted-foreground: #C5B9CD;
+  --accent: #F5B65C;
+  --accent-foreground: #100D19;
+  --accent-soft: rgba(241, 132, 69, 0.20);
+  --border: #493B55;
+  --border-subtle: #382D42;
+  --input: #191426;
+  --input-foreground: #FFF8F0;
+  --input-border: #493B55;
+  --ring: #F18445;
+  --success: #20C997;
+  --success-foreground: #FFFFFF;
+  --success-bg: rgba(32, 201, 151, 0.20);
+  --warning: #F5B65C;
+  --warning-foreground: #100D19;
+  --warning-bg: rgba(245, 182, 92, 0.20);
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --destructive-bg: rgba(239, 68, 68, 0.20);
+
+  --bg-main: #100D19;
+  --bg-secondary: #191426;
+  --bg-card: #211A2D;
+  --bg-elevated: #292137;
+  --text-primary: #FFF8F0;
+  --text-secondary: #C5B9CD;
+  --border-color: #493B55;
+  --accent-primary: #F18445;
+  --accent-secondary: #F5B65C;
+  --color-success: #20C997;
+
+  /* Quick Date Button Theme Variables - Dark Mode */
+  --quick-date-bg: #292137;
+  --quick-date-text: #FFF8F0;
+  --quick-date-border: #493B55;
+  --quick-date-hover-bg: #362B46;
+  --quick-date-hover-text: #FFFFFF;
+  --quick-date-active-bg: #F18445;
+  --quick-date-active-text: #FFFFFF;
+  --quick-date-active-border: #F18445;
+
+  --bg-primary: #100D19;
+}
+
+/* ======================================================== */
+/* 1B. TAILWIND SEMANTIC TOKEN REGISTER                     */
+/* ======================================================== */
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+}
+
+/* ======================================================== */
+/* 2. BASE DOCUMENT TRANSITIONS & SMOOTH PALETTES           */
+/* ======================================================== */
+
+html {
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+body {
+  transition: background-color 0.6s ease, color 0.6s ease;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+html.theme-light body,
+[data-theme="light"] body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(233, 121, 61, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 85% 30%, rgba(217, 154, 67, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 70%, rgba(19, 135, 92, 0.05) 0%, transparent 50%) !important;
+  background-attachment: fixed;
+}
+
+html.dark body,
+html.theme-dark body,
+[data-theme="dark"] body {
+  background-color: var(--background) !important;
+  color: var(--foreground) !important;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(241, 132, 69, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 85% 30%, rgba(73, 59, 85, 0.15) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 70%, rgba(32, 201, 151, 0.06) 0%, transparent 50%) !important;
+  background-attachment: fixed;
+}
+
+/* ======================================================== */
+/* 3. NAVBAR THEME ADAPTATIONS                              */
+/* ======================================================== */
+
+html.theme-light header.navbar-solid,
+[data-theme="light"] header.navbar-solid {
+  background-color: rgba(255, 255, 255, 0.96) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 4px 20px rgba(37, 27, 50, 0.06) !important;
+  color: var(--foreground) !important;
+}
+
+html.theme-light header.navbar-transparent,
+[data-theme="light"] header.navbar-transparent {
+  background: linear-gradient(180deg, rgba(250, 245, 237, 0.95) 0%, rgba(250, 245, 237, 0.70) 50%, transparent 100%) !important;
+  border-bottom: 1px solid transparent !important;
+  color: var(--foreground) !important;
+}
+
+html.dark header.navbar-solid,
+html.theme-dark header.navbar-solid,
+[data-theme="dark"] header.navbar-solid {
+  background-color: rgba(33, 26, 45, 0.96) !important;
+  border-bottom: 1px solid var(--border) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  color: var(--foreground) !important;
+}
+
+html.dark header.navbar-transparent,
+html.theme-dark header.navbar-transparent,
+[data-theme="dark"] header.navbar-transparent {
+  background: linear-gradient(180deg, rgba(16, 13, 25, 0.92) 0%, rgba(16, 13, 25, 0.60) 60%, transparent 100%) !important;
+  border-bottom: 1px solid transparent !important;
+  color: var(--foreground) !important;
+}
+
+/* Brand Logo Text */
+html.theme-light .brand-title,
+[data-theme="light"] .brand-title {
+  color: #251B32 !important;
+  font-weight: 800 !important;
+}
+html.dark .brand-title,
+html.theme-dark .brand-title,
+[data-theme="dark"] .brand-title {
+  color: #FFF8F0 !important;
+  font-weight: 800 !important;
+}
+html.theme-light .brand-subtitle,
+[data-theme="light"] .brand-subtitle {
+  color: #56495C !important;
+  font-weight: 600 !important;
+}
+html.dark .brand-subtitle,
+html.theme-dark .brand-subtitle,
+[data-theme="dark"] .brand-subtitle {
+  color: #C5B9CD !important;
+}
+
+/* Nav Links */
+html.theme-light .nav-link-inactive,
+[data-theme="light"] .nav-link-inactive {
+  color: #56495C !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+html.theme-light .nav-link-inactive:hover,
+[data-theme="light"] .nav-link-inactive:hover {
+  color: #251B32 !important;
+  background-color: #F3EBDD !important;
+}
+html.theme-light .nav-link-active,
+[data-theme="light"] .nav-link-active {
+  background-color: rgba(233, 121, 61, 0.15) !important;
+  color: #E9793D !important;
+  border-color: rgba(233, 121, 61, 0.40) !important;
+  font-weight: 700 !important;
+}
+
+html.dark .nav-link-inactive,
+html.theme-dark .nav-link-inactive,
+[data-theme="dark"] .nav-link-inactive {
+  color: #C5B9CD !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+html.dark .nav-link-inactive:hover,
+html.theme-dark .nav-link-inactive:hover,
+[data-theme="dark"] .nav-link-inactive:hover {
+  color: #FFF8F0 !important;
+  background-color: #292137 !important;
+}
+html.dark .nav-link-active,
+html.theme-dark .nav-link-active,
+[data-theme="dark"] .nav-link-active {
+  background-color: rgba(241, 132, 69, 0.20) !important;
+  color: #F5B65C !important;
+  border-color: rgba(241, 132, 69, 0.45) !important;
+  font-weight: 700 !important;
+}
+
+/* Navbar Dropdown */
+html.theme-light .navbar-dropdown,
+[data-theme="light"] .navbar-dropdown {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E7D5C1 !important;
+  box-shadow: 0 16px 36px rgba(44, 33, 27, 0.12) !important;
+  color: #251B32 !important;
+}
+html.theme-light .navbar-dropdown a,
+[data-theme="light"] .navbar-dropdown a {
+  color: #56495C !important;
+}
+html.theme-light .navbar-dropdown a:hover,
+[data-theme="light"] .navbar-dropdown a:hover {
+  background-color: #FAF5ED !important;
+  color: #E9793D !important;
+}
+
+html.theme-dark .navbar-dropdown,
+html.dark .navbar-dropdown,
+[data-theme="dark"] .navbar-dropdown {
+  background-color: #211A2D !important;
+  border: 1px solid #493B55 !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6) !important;
+  color: #FFF8F0 !important;
+}
+html.theme-dark .navbar-dropdown a,
+html.dark .navbar-dropdown a,
+[data-theme="dark"] .navbar-dropdown a {
+  color: #C5B9CD !important;
+}
+html.theme-dark .navbar-dropdown a:hover,
+html.dark .navbar-dropdown a:hover,
+[data-theme="dark"] .navbar-dropdown a:hover {
+  background-color: #292137 !important;
+  color: #F18445 !important;
+}
+
+/* ======================================================== */
+/* 4. BADGES (WCAG 2.2 AA CONTRAST COMPLIANT)               */
+/* ======================================================== */
+
+html.theme-light .badge-verified,
+html.theme-light .badge-accent,
+[data-theme="light"] .badge-verified,
+[data-theme="light"] .badge-accent {
+  background-color: #FCEADE !important;
+  color: #C2561E !important;
+  border-color: #E9793D !important;
+  font-weight: 700 !important;
+}
+
+html.theme-light .badge-live,
+[data-theme="light"] .badge-live {
+  background-color: #DCFCE7 !important;
+  color: #13875C !important;
+  border-color: #86EFAC !important;
+  font-weight: 700 !important;
+}
+
+html.theme-light .badge-offline,
+[data-theme="light"] .badge-offline {
+  background-color: #FEE2E2 !important;
+  color: #991B1B !important;
+  border-color: #FCA5A5 !important;
+  font-weight: 700 !important;
+}
+
+html.theme-light .badge-neutral,
+[data-theme="light"] .badge-neutral {
+  background-color: #F3EBDD !important;
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+  font-weight: 600 !important;
+}
+
+html.theme-light .badge-warning,
+[data-theme="light"] .badge-warning {
+  background-color: #FEF3C7 !important;
+  color: #92400E !important;
+  border-color: #FCD34D !important;
+  font-weight: 700 !important;
+}
+
+html.dark .badge-verified,
+html.dark .badge-accent,
+html.theme-dark .badge-verified,
+html.theme-dark .badge-accent,
+[data-theme="dark"] .badge-verified,
+[data-theme="dark"] .badge-accent {
+  background-color: rgba(241, 132, 69, 0.20) !important;
+  color: #F5B65C !important;
+  border-color: rgba(241, 132, 69, 0.45) !important;
+  font-weight: 700 !important;
+}
+
+html.dark .badge-live,
+html.theme-dark .badge-live,
+[data-theme="dark"] .badge-live {
+  background-color: #143826 !important;
+  color: #20C997 !important;
+  border-color: #059669 !important;
+  font-weight: 700 !important;
+}
+
+html.dark .badge-offline,
+html.theme-dark .badge-offline,
+[data-theme="dark"] .badge-offline {
+  background-color: #3D181D !important;
+  color: #EF4444 !important;
+  border-color: #DC2626 !important;
+  font-weight: 700 !important;
+}
+
+html.dark .badge-neutral,
+html.theme-dark .badge-neutral,
+[data-theme="dark"] .badge-neutral {
+  background-color: #211A2D !important;
+  color: #FFF8F0 !important;
+  border-color: #493B55 !important;
+  font-weight: 600 !important;
+}
+
+html.dark .badge-warning,
+html.theme-dark .badge-warning,
+[data-theme="dark"] .badge-warning {
+  background-color: #382910 !important;
+  color: #F5B65C !important;
+  border-color: #D97706 !important;
+  font-weight: 700 !important;
+}
+
+/* ======================================================== */
+/* 5. STATION INFORMATION BANNERS (LIGHT & DARK VARIANTS)   */
+/* ======================================================== */
+
+html.theme-light .station-info-banner,
+[data-theme="light"] .station-info-banner {
+  border-color: #E7D5C1 !important;
+  box-shadow: 0 10px 30px rgba(44, 33, 27, 0.08) !important;
+  background-color: #FAF5ED !important;
+}
+html.theme-light .station-info-banner .banner-gradient,
+[data-theme="light"] .station-info-banner .banner-gradient {
+  background: linear-gradient(90deg, rgba(250, 245, 237, 0.96) 0%, rgba(250, 245, 237, 0.88) 50%, rgba(250, 245, 237, 0.40) 100%) !important;
+}
+html.theme-light .station-info-banner .banner-badge,
+[data-theme="light"] .station-info-banner .banner-badge {
+  background-color: #E9793D !important;
+  color: #FFFFFF !important;
+}
+html.theme-light .station-info-banner .banner-counter,
+[data-theme="light"] .station-info-banner .banner-counter {
+  background-color: #FFFFFF !important;
+  color: #E9793D !important;
+  border: 1px solid #E7D5C1 !important;
+}
+html.theme-light .station-info-banner .banner-title,
+[data-theme="light"] .station-info-banner .banner-title {
+  color: #251B32 !important;
+  text-shadow: none !important;
+}
+html.theme-light .station-info-banner .banner-subtitle,
+[data-theme="light"] .station-info-banner .banner-subtitle {
+  color: #56495C !important;
+  text-shadow: none !important;
+}
+
+html.dark .station-info-banner,
+html.theme-dark .station-info-banner,
+[data-theme="dark"] .station-info-banner {
+  border-color: #493B55 !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5) !important;
+  background-color: #191426 !important;
+}
+html.dark .station-info-banner .banner-gradient,
+html.theme-dark .station-info-banner .banner-gradient,
+[data-theme="dark"] .station-info-banner .banner-gradient {
+  background: linear-gradient(90deg, rgba(25, 20, 38, 0.95) 0%, rgba(25, 20, 38, 0.75) 55%, transparent 100%) !important;
+}
+html.dark .station-info-banner .banner-badge,
+html.theme-dark .station-info-banner .banner-badge,
+[data-theme="dark"] .station-info-banner .banner-badge {
+  background-color: #F18445 !important;
+  color: #FFFFFF !important;
+}
+html.dark .station-info-banner .banner-counter,
+html.theme-dark .station-info-banner .banner-counter,
+[data-theme="dark"] .station-info-banner .banner-counter {
+  background-color: #211A2D !important;
+  color: #F5B65C !important;
+  border: 1px solid #493B55 !important;
+}
+html.dark .station-info-banner .banner-title,
+html.theme-dark .station-info-banner .banner-title,
+[data-theme="dark"] .station-info-banner .banner-title {
+  color: #FFF8F0 !important;
+}
+html.dark .station-info-banner .banner-subtitle,
+html.theme-dark .station-info-banner .banner-subtitle,
+[data-theme="dark"] .station-info-banner .banner-subtitle {
+  color: #C5B9CD !important;
+}
+/* Station Concourse Ambient Lighting */
+html.theme-light .station-ambient-layer {
+  background: linear-gradient(180deg, rgba(250, 245, 238, 0.85) 0%, rgba(250, 245, 238, 0.45) 50%, rgba(250, 245, 238, 0.80) 100%) !important;
+}
+html.theme-light .station-ground-layer {
+  background: linear-gradient(0deg, #FAF5EE 0%, rgba(250, 245, 238, 0.85) 60%, transparent 100%) !important;
+}
+html.theme-dark .station-ambient-layer {
+  background: linear-gradient(180deg, rgba(18, 15, 29, 0.85) 0%, rgba(25, 20, 36, 0.40) 50%, rgba(18, 15, 29, 0.55) 100%) !important;
+}
+html.theme-dark .station-ground-layer {
+  background: linear-gradient(0deg, #120F1D 0%, rgba(18, 15, 29, 0.80) 60%, transparent 100%) !important;
+}
+
+/* ======================================================== */
+/* 6. CARDS, SURFACES & CONTAINERS IN LIGHT MODE            */
+/* ======================================================== */
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#120F1D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#120F1D\]\/80,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#120F1D\]\/90 {
+  background-color: #FAF5ED !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#161022\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#161022\]\/95,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#181324\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#181324\]\/95 {
+  background-color: #FAF5ED !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1D162A\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1D162A\]\/92,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1D162A\]\/95 {
+  background-color: #FFFFFF !important;
+  border-color: #E7D5C1 !important;
+  box-shadow: 0 4px 16px rgba(44, 33, 27, 0.05) !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#241A33\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#241B34\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#241A33\]\/90,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#241A33\]\/95,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#2A1F3D\] {
+  background-color: #FAF5ED !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1C1427\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1C1528\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#171122\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#140E1E\] {
+  background-color: #F3EBDD !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#231A33\] {
+  background-color: #F3EBDD !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#150F21\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#20182E\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#2B1F3D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#191424\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#191226\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#191226\]\/85 {
+  background-color: #F3EBDD !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1B362A\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) span.bg-\[\#1B362A\] {
+  background-color: #DCFCE7 !important;
+  color: #13875C !important;
+  border-color: #86EFAC !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#2A1F3D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#2A1F3D\] {
+  background-color: #FAF5ED !important;
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#2A1F3D\]:hover,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#2A1F3D\]:hover {
+  background-color: #F3EBDD !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1A1226\]\/95,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1A1226\] {
+  background-color: #F3EBDD !important;
+  border-color: #E7D5C1 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1E172C\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1E172B\] {
+  background-color: #FFFFFF !important;
+  border-color: #E7D5C1 !important;
+}
+
+/* Borders */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#36274D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#36284D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#3E2D58\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#3E2E59\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#483662\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#443360\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#5A436F\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#2C213F\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .border-\[\#2B1F3D\] {
+  border-color: #E7D5C1 !important;
+}
+
+/* ======================================================== */
+/* 6B. PASSENGER INFORMATION MODULE CARDS                   */
+/* ======================================================== */
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .card-module {
+  background-color: #FFFFFF !important;
+  border-color: #E7D5C1 !important;
+  color: #251B32 !important;
+  box-shadow: 0 2px 10px rgba(44, 33, 27, 0.05) !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .card-module:hover {
+  background-color: #FAF5ED !important;
+  border-color: #E9793D !important;
+  box-shadow: 0 8px 24px rgba(44, 33, 27, 0.09) !important;
+}
+
+html.theme-dark .card-module,
+html.dark .card-module,
+[data-theme="dark"] .card-module {
+  background-color: #211A2D !important;
+  border-color: #493B55 !important;
+  color: #FFF8F0 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+html.theme-dark .card-module:hover,
+html.dark .card-module:hover,
+[data-theme="dark"] .card-module:hover {
+  background-color: #292137 !important;
+  border-color: #F18445 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* ======================================================== */
+/* 6C. CARDS, SURFACES & CONTAINERS IN DARK MODE            */
+/* ======================================================== */
+
+html.dark,
+html.theme-dark,
+[data-theme="dark"] {
+  background-color: #100D19 !important;
+  color: #FFF8F0 !important;
+}
+
+html.dark body,
+html.theme-dark body,
+[data-theme="dark"] body {
+  background-color: #100D19 !important;
+  color: #FFF8F0 !important;
+}
+
+/* Ensure borders in Dark Mode */
+html.dark .border-\[\#E5D5C4\],
+html.theme-dark .border-\[\#E5D5C4\],
+[data-theme="dark"] .border-\[\#E5D5C4\],
+html.dark .border-\[\#E7D5C1\],
+html.theme-dark .border-\[\#E7D5C1\],
+[data-theme="dark"] .border-\[\#E7D5C1\],
+html.dark .border-\[\#E5D8C6\],
+html.theme-dark .border-\[\#E5D8C6\],
+[data-theme="dark"] .border-\[\#E5D8C6\] {
+  border-color: #493B55 !important;
+}
+
+/* Ensure Dark Mode Typography & Never Allow Dark Plum on Dark Card */
+html.dark .text-\[\#302638\],
+html.theme-dark .text-\[\#302638\],
+[data-theme="dark"] .text-\[\#302638\],
+html.dark .text-\[\#251B32\],
+html.theme-dark .text-\[\#251B32\],
+[data-theme="dark"] .text-\[\#251B32\],
+html.dark .text-\[\#1F162B\],
+html.theme-dark .text-\[\#1F162B\],
+[data-theme="dark"] .text-\[\#1F162B\],
+html.dark .text-\[\#24172E\],
+html.theme-dark .text-\[\#24172E\],
+[data-theme="dark"] .text-\[\#24172E\] {
+  color: #FFF8F0 !important;
+}
+
+html.dark .text-\[\#655967\],
+html.theme-dark .text-\[\#655967\],
+[data-theme="dark"] .text-\[\#655967\],
+html.dark .text-\[\#685C6B\],
+html.theme-dark .text-\[\#685C6B\],
+[data-theme="dark"] .text-\[\#685C6B\],
+html.dark .text-\[\#4A3B4E\],
+html.theme-dark .text-\[\#4A3B4E\],
+[data-theme="dark"] .text-\[\#4A3B4E\],
+html.dark .text-\[\#6B5E70\],
+html.theme-dark .text-\[\#6B5E70\],
+[data-theme="dark"] .text-\[\#6B5E70\],
+html.dark .text-\[\#8E8274\],
+html.theme-dark .text-\[\#8E8274\],
+[data-theme="dark"] .text-\[\#8E8274\],
+html.dark .text-\[\#8C7A6D\],
+html.theme-dark .text-\[\#8C7A6D\],
+[data-theme="dark"] .text-\[\#8C7A6D\] {
+  color: #C5B9CD !important;
+}
+
+/* Warm Gold & Orange Accents in Dark Mode */
+html.dark .text-\[\#C2561E\],
+html.theme-dark .text-\[\#C2561E\],
+[data-theme="dark"] .text-\[\#C2561E\],
+html.dark .text-\[\#E9793D\],
+html.theme-dark .text-\[\#E9793D\],
+[data-theme="dark"] .text-\[\#E9793D\] {
+  color: #F18445 !important;
+}
+
+html.dark .text-\[\#D99A43\],
+html.theme-dark .text-\[\#D99A43\],
+[data-theme="dark"] .text-\[\#D99A43\],
+html.dark .text-\[\#D99A58\],
+html.theme-dark .text-\[\#D99A58\],
+[data-theme="dark"] .text-\[\#D99A58\],
+html.dark .text-\[\#F6C176\],
+html.theme-dark .text-\[\#F6C176\],
+[data-theme="dark"] .text-\[\#F6C176\] {
+  color: #F5B65C !important;
+}
+
+/* Green Success in Dark Mode */
+html.dark .text-\[\#14532D\],
+html.theme-dark .text-\[\#14532D\],
+[data-theme="dark"] .text-\[\#14532D\],
+html.dark .text-\[\#1E7B48\],
+html.theme-dark .text-\[\#1E7B48\],
+[data-theme="dark"] .text-\[\#1E7B48\] {
+  color: #20C997 !important;
+}
+
+
+/* ======================================================== */
+/* 7. TYPOGRAPHY & CONTRAST IN LIGHT MODE (WCAG 2.2 AA)     */
+/* ======================================================== */
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#FFF8F0\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#FFF8F0\]\/90,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#FFF8F0\]\/80 {
+  color: #251B32 !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#D8CFBE\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#D8CFBE\]\/70,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#D8CFBE\]\/80,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#D8CFBE\]\/85,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#D8CFBE\]\/90 {
+  color: #56495C !important;
+}
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#A093B3\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#A39687\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#8E8274\] {
+  color: #56495C !important;
+}
+
+/* Light mode accent text replacements */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#F6C176\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .text-\[\#F5B65C\] {
+  color: #C2561E !important;
+}
+
+/* Protect buttons and colored badges from having their text overridden */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#E67E48\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#E67E48\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E67E48\] span,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E67E48\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#E98245\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#E98245\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E98245\] span,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E98245\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#E9793D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#E9793D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E9793D\] span,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#E9793D\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#234E41\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#234E41\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#234E41\] span,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#234E41\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-\[\#1E5244\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) a.bg-\[\#1E5244\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1E5244\] span,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-\[\#1E5244\],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) button.bg-rose-700,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .bg-rose-700 {
+  color: #FFFFFF !important;
+}
+
+/* ======================================================== */
+/* 7B. QUICK DATE BUTTONS (TODAY, TOMORROW, +2 DAYS)        */
+/* ======================================================== */
+
+.quick-date-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  background-color: var(--quick-date-bg) !important;
+  color: var(--quick-date-text) !important;
+  border: 1px solid var(--quick-date-border) !important;
+  transition: all 0.15s ease-in-out;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.quick-date-btn:hover:not(.quick-date-btn-active):not(:disabled) {
+  background-color: var(--quick-date-hover-bg) !important;
+  color: var(--quick-date-hover-text) !important;
+}
+
+.quick-date-btn.quick-date-btn-active {
+  background-color: var(--quick-date-active-bg) !important;
+  color: var(--quick-date-active-text) !important;
+  border-color: var(--quick-date-active-border) !important;
+  box-shadow: 0 2px 8px rgba(233, 130, 69, 0.35) !important;
+  font-weight: 700 !important;
+}
+
+.quick-date-btn:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px var(--background), 0 0 0 4px #E98245 !important;
+}
+
+.quick-date-btn:disabled {
+  opacity: 0.5 !important;
+  cursor: not-allowed !important;
+}
+
+/* ======================================================== */
+/* 8. CHAT & MARKDOWN FORMATTING (LIGHT & DARK)             */
+/* ======================================================== */
+
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown p {
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown strong {
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown em {
+  color: #685C6B !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown h1,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown h2,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown h3 {
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown ul,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown ol,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown li {
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown a {
+  color: #E9793D !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown a:hover {
+  color: #D46A34 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown blockquote {
+  background-color: #FAF5ED !important;
+  color: #685C6B !important;
+  border-left-color: #E9793D !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown code {
+  background-color: #FAF5ED !important;
+  border-color: #E7D5C1 !important;
+  color: #E9793D !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown pre {
+  background-color: #FAF5ED !important;
+  border-color: #E7D5C1 !important;
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown table {
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown thead,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown th {
+  background-color: #F3EBDD !important;
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown tbody,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown td {
+  background-color: #FFFFFF !important;
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .chat-markdown tr:hover {
+  background-color: #FAF5ED !important;
+}
+
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown p {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown strong {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown h1 {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown h2,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown h3 {
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown ul,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown ol,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown li {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown a {
+  color: #F18445 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown a:hover {
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown blockquote {
+  background-color: #191426 !important;
+  color: #C5B9CD !important;
+  border-left-color: #F18445 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown code {
+  background-color: #191426 !important;
+  border-color: #493B55 !important;
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown pre {
+  background-color: #100D19 !important;
+  border-color: #493B55 !important;
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown table {
+  border-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown thead,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown th {
+  background-color: #191426 !important;
+  color: #F5B65C !important;
+  border-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown tbody,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown td {
+  background-color: #211A2D !important;
+  color: #FFF8F0 !important;
+  border-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .chat-markdown tr:hover {
+  background-color: #292137 !important;
+}
+
+/* ======================================================== */
+/* 9. INPUTS, CONTROLS & DATA TABLES                        */
+/* ======================================================== */
+
+/* Form Inputs - Light Mode */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) textarea,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) select {
+  color: #251B32 !important;
+  background-color: #FFFFFF !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) input::placeholder,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) textarea::placeholder {
+  color: #7B6F80 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) input:focus,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) textarea:focus,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) select:focus {
+  border-color: #E9793D !important;
+  box-shadow: 0 0 0 3px rgba(233, 121, 61, 0.20) !important;
+}
+
+/* Form Inputs - Dark Mode */
+:where(html.dark, html.theme-dark, [data-theme="dark"]) input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+:where(html.dark, html.theme-dark, [data-theme="dark"]) textarea,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) select {
+  color: #FFF8F0 !important;
+  background-color: #191426 !important;
+  border-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) input::placeholder,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) textarea::placeholder {
+  color: #8E8098 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) input:focus,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) textarea:focus,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) select:focus {
+  border-color: #F18445 !important;
+  box-shadow: 0 0 0 3px rgba(241, 132, 69, 0.30) !important;
+}
+
+/* Checkbox & Radio Controls */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) input[type="checkbox"],
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) input[type="radio"] {
+  accent-color: #E9793D;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) input[type="checkbox"],
+:where(html.dark, html.theme-dark, [data-theme="dark"]) input[type="radio"] {
+  accent-color: #F18445;
+}
+
+/* Data Tables - Light Mode */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) table thead,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) table th {
+  background-color: #F3EBDD !important;
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+  font-weight: 700 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) table tbody {
+  background-color: #FFFFFF !important;
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) table td {
+  color: #251B32 !important;
+  border-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) table tr:hover {
+  background-color: #FAF5ED !important;
+}
+
+/* Data Tables - Dark Mode */
+:where(html.dark, html.theme-dark, [data-theme="dark"]) table thead,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) table th {
+  background-color: #191426 !important;
+  color: #F5B65C !important;
+  border-color: #493B55 !important;
+  font-weight: 700 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) table tbody {
+  background-color: #211A2D !important;
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) table td {
+  color: #FFF8F0 !important;
+  border-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) table tr:hover {
+  background-color: #292137 !important;
+}
+
+/* ======================================================== */
+/* 9B. STATION AUTOCOMPLETE & DROPDOWNS                     */
+/* ======================================================== */
+
+/* Station Autocomplete Dropdown - Light Mode */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-dropdown {
+  background-color: #FFFFFF !important;
+  border-color: #E7D5C1 !important;
+  box-shadow: 0 12px 30px rgba(37, 27, 50, 0.12) !important;
+  divide-color: #E7D5C1 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item {
+  background-color: #FFFFFF !important;
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:hover,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:focus {
+  background-color: #FCEADE !important;
+  color: #C2561E !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item .station-name {
+  color: #251B32 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:hover .station-name,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:focus .station-name {
+  color: #C2561E !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item .station-city {
+  color: #56495C !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:hover .station-city,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:focus .station-city {
+  color: #7B6F80 !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item .station-code {
+  background-color: #FAF5ED !important;
+  border-color: #E7D5C1 !important;
+  color: #E9793D !important;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:hover .station-code,
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) .station-autocomplete-item:focus .station-code {
+  background-color: #FFFFFF !important;
+  border-color: #E9793D !important;
+  color: #C2561E !important;
+}
+
+/* Station Autocomplete Dropdown - Dark Mode */
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-dropdown {
+  background-color: #191426 !important;
+  border-color: #493B55 !important;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.6) !important;
+  divide-color: #493B55 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item {
+  background-color: #191426 !important;
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:hover,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:focus {
+  background-color: #292137 !important;
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item .station-name {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:hover .station-name,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:focus .station-name {
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item .station-city {
+  color: #C5B9CD !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:hover .station-city,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:focus .station-city {
+  color: #FFF8F0 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item .station-code {
+  background-color: #211A2D !important;
+  border-color: #493B55 !important;
+  color: #F5B65C !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:hover .station-code,
+:where(html.dark, html.theme-dark, [data-theme="dark"]) .station-autocomplete-item:focus .station-code {
+  background-color: #362B46 !important;
+  border-color: #F18445 !important;
+  color: #F5B65C !important;
+}
+
+/* Native select & option elements */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) select option {
+  background-color: #FFFFFF !important;
+  color: #251B32 !important;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) select option {
+  background-color: #191426 !important;
+  color: #FFF8F0 !important;
+}
+
+/* Global Focus-Visible Ring */
+:focus-visible {
+  outline: 2px solid var(--ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* Scrollbars */
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) ::-webkit-scrollbar-track {
+  background: #FAF5ED;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) ::-webkit-scrollbar-thumb {
+  background: #D8C7B0;
+  border-radius: 4px;
+}
+:where(html.theme-light, [data-theme="light"], html:not(.dark)) ::-webkit-scrollbar-thumb:hover {
+  background: #E9793D;
+}
+
+:where(html.dark, html.theme-dark, [data-theme="dark"]) ::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) ::-webkit-scrollbar-track {
+  background: #100D19;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) ::-webkit-scrollbar-thumb {
+  background: #382B4F;
+  border-radius: 4px;
+}
+:where(html.dark, html.theme-dark, [data-theme="dark"]) ::-webkit-scrollbar-thumb:hover {
+  background: #F18445;
+}
+
+/* ======================================================== */
+/* 10. LIVING RAILWAY WORLD ANIMATIONS                      */
+/* ======================================================== */
+
+/* Continuous Train Journey Across Scenic Landscape */
+@keyframes trainTravelWorld {
+  0% {
+    transform: translateX(-160%);
+  }
+  100% {
+    transform: translateX(450%);
+  }
+}
+
+/* Rotating Train Wheels */
+@keyframes wheelRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Billowing Steam Clouds Rising From Locomotive */
+@keyframes steamDrift {
+  0% {
+    transform: scale(0.4) translateY(0) translateX(0);
+    opacity: 0.85;
+  }
+  50% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: scale(1.9) translateY(-26px) translateX(-28px);
+    opacity: 0;
+  }
+}
+
+/* Organic Sunset Clouds Drift Across Mountains */
+@keyframes cloudDriftSlow {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Distant Landscape Parallax Panning */
+@keyframes landscapeParallax {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Soaring Birds Across the Mountain Sky */
+@keyframes birdsSoar {
+  0% {
+    transform: translateX(-40px) translateY(0) scale(0.85);
+  }
+  50% {
+    transform: translateX(400px) translateY(-25px) scale(0.95);
+  }
+  100% {
+    transform: translateX(900px) translateY(-50px) scale(0.85);
+  }
+}
+
+/* Gentle Forest Trees Swaying in Mountain Breeze */
+@keyframes treeSwayGentle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.2deg);
+  }
+}
+
+/* Golden Sunset Ambient Light Pulse */
+@keyframes sunRadiance {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 45px rgba(246, 193, 118, 0.75));
+  }
+  50% {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 75px rgba(230, 126, 72, 0.95));
+  }
+}
+
+/* Luminous White Moon Radiance Pulse */
+@keyframes moonRadiance {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 40px rgba(210, 230, 255, 0.8));
+  }
+  50% {
+    transform: scale(1.04);
+    filter: drop-shadow(0 0 70px rgba(235, 245, 255, 0.95));
+  }
+}
+
+/* Twinkling Night Stars */
+@keyframes starTwinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25);
+  }
+}
+
+/* Heritage Brass Lantern Ambient Glow */
+@keyframes lanternGlow {
+  0%, 100% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 12px rgba(246, 193, 118, 0.7));
+  }
+  50% {
+    opacity: 0.72;
+    filter: drop-shadow(0 0 6px rgba(246, 193, 118, 0.4));
+  }
+}
+
+/* Railway Track Active Signal Pulse */
+@keyframes signalGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.92);
+  }
+}
+
+/* Shimmering Mountain River Water */
+@keyframes riverShimmer {
+  0%, 100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.95;
+  }
+}
+
+/* Train Gliding Into Station Platform */
+@keyframes stationTrainGlide {
+  0% {
+    transform: translateX(-120%);
+  }
+  45% {
+    transform: translateX(0%);
+  }
+  75% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(180%);
+  }
+}
+
+/* Sunbeams Shifting Through Arched Station Skylights */
+@keyframes sunbeamShift {
+  0%, 100% {
+    opacity: 0.35;
+    transform: rotate(-12deg) scaleY(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: rotate(-10deg) scaleY(1.08);
+  }
+}
+
+/* Passenger Walking Left to Right with Rolling Suitcase */
+@keyframes passengerWalkLtoR {
+  0% {
+    transform: translateX(-80px) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateX(1100px) translateY(-4px);
+    opacity: 0;
+  }
+}
+
+/* Passenger Walking Right to Left Across Concourse */
+@keyframes passengerWalkRtoL {
+  0% {
+    transform: translateX(1100px) translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(-100px) translateY(-2px);
+    opacity: 0;
+  }
+}
+
+/* Suitcase Wheel Bobbing */
+@keyframes luggageBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px) rotate(1deg);
+  }
+}
+
+/* Railway Station Clock Second Hand Smooth Sweep */
+@keyframes clockHandSecond {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Electronic Train Information Display Marquee */
+@keyframes ledMarquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Station Staff Enquiry Gesture */
+@keyframes staffGesture {
+  0%, 100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  30% {
+    transform: rotate(-2deg) translateY(-1px);
+  }
+  70% {
+    transform: rotate(1deg) translateY(0.5px);
+  }
+}
+
+/* Station Lamp Flicker */
+@keyframes stationLampWarm {
+  0%, 100% {
+    opacity: 0.92;
+    filter: drop-shadow(0 0 10px rgba(246, 193, 118, 0.8));
+  }
+  50% {
+    opacity: 0.78;
+    filter: drop-shadow(0 0 5px rgba(246, 193, 118, 0.5));
+  }
+}
+
+.animate-train-travel-world {
+  animation: trainTravelWorld 24s linear infinite;
+  will-change: transform;
+}
+
+.animate-wheel-rotate {
+  animation: wheelRotate 1.2s linear infinite;
+  transform-origin: center;
+}
+
+.animate-steam-1 {
+  animation: steamDrift 2.2s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steamDrift 2.2s ease-out infinite 0.7s;
+}
+
+.animate-steam-3 {
+  animation: steamDrift 2.2s ease-out infinite 1.4s;
+}
+
+.animate-cloud-drift-slow {
+  animation: cloudDriftSlow 75s linear infinite;
+  will-change: transform;
+}
+
+.animate-landscape-parallax {
+  animation: landscapeParallax 45s linear infinite;
+  will-change: transform;
+}
+
+.animate-birds-soar {
+  animation: birdsSoar 32s ease-in-out infinite;
+}
+
+.animate-tree-sway {
+  animation: treeSwayGentle 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-sun-radiance {
+  animation: sunRadiance 6s ease-in-out infinite;
+}
+
+.animate-moon-radiance {
+  animation: moonRadiance 5s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: starTwinkle 3s ease-in-out infinite;
+}
+
+.animate-twinkle-delayed {
+  animation: starTwinkle 4.5s ease-in-out infinite 1.8s;
+}
+
+.animate-lantern-glow {
+  animation: lanternGlow 3s ease-in-out infinite;
+}
+
+.animate-signal-glow {
+  animation: signalGlow 2s ease-in-out infinite;
+}
+
+.animate-river-shimmer {
+  animation: riverShimmer 4s ease-in-out infinite;
+}
+
+.animate-station-train {
+  animation: stationTrainGlide 38s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+  will-change: transform;
+}
+
+.animate-sunbeam {
+  animation: sunbeamShift 8s ease-in-out infinite;
+  transform-origin: top left;
+}
+
+.animate-passenger-1 {
+  animation: passengerWalkLtoR 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-passenger-2 {
+  animation: passengerWalkRtoL 36s linear infinite 6s;
+  will-change: transform;
+}
+
+.animate-luggage-bob {
+  animation: luggageBob 0.6s ease-in-out infinite;
+}
+
+.animate-clock-second {
+  animation: clockHandSecond 60s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+.animate-led-marquee {
+  animation: ledMarquee 25s linear infinite;
+  will-change: transform;
+}
+
+.animate-staff-gesture {
+  animation: staffGesture 6s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.animate-station-lamp {
+  animation: stationLampWarm 4s ease-in-out infinite;
+}
+
+/* Accessibility: Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-train-travel-world,
+  .animate-wheel-rotate,
+  .animate-steam-1,
+  .animate-steam-2,
+  .animate-steam-3,
+  .animate-cloud-drift-slow,
+  .animate-landscape-parallax,
+  .animate-birds-soar,
+  .animate-tree-sway,
+  .animate-sun-radiance,
+  .animate-moon-radiance,
+  .animate-twinkle,
+  .animate-twinkle-delayed,
+  .animate-lantern-glow,
+  .animate-signal-glow,
+  .animate-river-shimmer,
+  .animate-station-train,
+  .animate-sunbeam,
+  .animate-passenger-1,
+  .animate-passenger-2,
+  .animate-luggage-bob,
+  .animate-clock-second,
+  .animate-led-marquee,
+  .animate-staff-gesture,
+  .animate-station-lamp {
+    animation: none !important;
+    transform: none !important;
+  }
+}
