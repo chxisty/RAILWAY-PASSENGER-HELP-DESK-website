@@ -2,7 +2,11 @@
  * Railway Passenger Help Desk - API Client
  */
 
-export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000';
+export const API_BASE_URL = 
+  process.env.NEXT_PUBLIC_API_URL || 
+  (typeof window !== 'undefined' && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1'
+    ? 'https://railway-passenger-help-desk-website.onrender.com'
+    : 'http://localhost:8000');
 
 export interface ChatMessage {
   role: 'user' | 'assistant' | 'system';

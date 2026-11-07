@@ -3,11 +3,25 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python&logoColor=white)](https://python.org)
 [![Gemini](https://img.shields.io/badge/Google%20Gemini-API%20Integrated-orange.svg?logo=google&logoColor=white)](https://ai.google.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black.svg?logo=next.js&logoColor=white)](https://nextjs.org/)
+[![Vercel](https://img.shields.io/badge/Vercel-Frontend%20Live-black?logo=vercel&logoColor=white)](https://railway-passenger-help-desk-website-five.vercel.app/)
+[![Render](https://img.shields.io/badge/Render-Backend%20Live-46E3B7?logo=render&logoColor=black)](https://railway-passenger-help-desk-website.onrender.com)
 [![SQLite](https://img.shields.io/badge/SQLite-Read--Only%20Timetable-003B57.svg?logo=sqlite&logoColor=white)](https://sqlite.org)
 [![RapidOCR](https://img.shields.io/badge/RapidOCR-ONNX%20Runtime-green.svg)]()
 [![Evaluation](https://img.shields.io/badge/Evaluation-25%2F25%20Passed%20(100%25)-brightgreen.svg)]()
 
-> An accurate, production-grade terminal AI application for Indian Railway passenger inquiries, developed strictly to the official **GenAI Nexus Module 2 Capstone Brief**. Powered by hybrid document retrieval with circular precedence, RapidOCR for scanned government orders, read-only timetable SQLite querying, and strict hallucination guardrails.
+> An accurate, production-grade AI passenger intelligence and help desk platform for Indian Railways, developed strictly to the official **GenAI Nexus Module 2 Capstone Brief**. Powered by hybrid document retrieval with circular precedence, RapidOCR for scanned government orders, read-only timetable SQLite querying, and strict anti-hallucination guardrails.
+
+---
+
+## 🌐 Live Deployments & Cloud Services
+
+| Service | Platform | Live URL | Description |
+| :--- | :--- | :--- | :--- |
+| **Frontend Web App** | **Vercel** | [railway-passenger-help-desk-website-five.vercel.app](https://railway-passenger-help-desk-website-five.vercel.app/) | Next.js 16 interactive UI with Train Finder, AI Chat, and Railway Directory |
+| **Backend REST API** | **Render** | [railway-passenger-help-desk-website.onrender.com](https://railway-passenger-help-desk-website.onrender.com) | FastAPI cloud service with Gemini LLM integration and hybrid RAG |
+| **Interactive API Docs** | **Render / Swagger** | [railway-passenger-help-desk-website.onrender.com/docs](https://railway-passenger-help-desk-website.onrender.com/docs) | Interactive Swagger UI API documentation and testing |
+| **API Health Status** | **Render** | [railway-passenger-help-desk-website.onrender.com/health](https://railway-passenger-help-desk-website.onrender.com/health) | Live telemetry and health check endpoint |
 
 ---
 
