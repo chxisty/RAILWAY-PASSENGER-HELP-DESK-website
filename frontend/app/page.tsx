@@ -41,23 +41,11 @@ import { Card } from '@/primitives/Card';
 import { TrainWindowHero } from '@/components/TrainWindowHero';
 import { JourneyMilestone } from '@/components/JourneyMilestone';
 import { ScenicRouteCards } from '@/components/ScenicRouteCards';
-import { WelcomeSplashScreen } from '@/components/WelcomeSplashScreen';
 import { useAuth } from '@/context/AuthContext';
 
 export default function HomePage() {
   const router = useRouter();
   const { user, isAuthenticated } = useAuth();
-  const [showIntro, setShowIntro] = useState<boolean>(false);
-
-  useEffect(() => {
-    // Check if first-time visitor
-    try {
-      const hasSeen = localStorage.getItem('railassist_intro_completed');
-      if (!hasSeen && !isAuthenticated) {
-        setShowIntro(true);
-      }
-    } catch {}
-  }, [isAuthenticated]);
 
   useEffect(() => {
     // Handle hash navigation on mount and hash changes (e.g. #ai-assistant)
@@ -267,20 +255,6 @@ export default function HomePage() {
       effective: '24x7 Active',
     },
   ];
-
-  if (showIntro) {
-    return (
-      <WelcomeSplashScreen
-        onComplete={() => {
-          try {
-            localStorage.setItem('railassist_intro_completed', 'true');
-          } catch {}
-          setShowIntro(false);
-          router.push('/login');
-        }}
-      />
-    );
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF5ED] dark:bg-[#100D19] text-[#251B32] dark:text-[#FFF8F0] overflow-x-hidden">

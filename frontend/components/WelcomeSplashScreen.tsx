@@ -314,35 +314,9 @@ export function WelcomeSplashScreen({ onComplete, standalone = true }: WelcomeSp
       </div>
 
       {/* ======================================================== */}
-      {/* 3. TOP BAR: LOGO & SKIP/THEME CONTROLS                   */}
+      {/* 3. TOP BAR: CONTROLS (Respects global Navbar)            */}
       {/* ======================================================== */}
-      <header className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 flex items-center justify-between">
-        
-        {/* RailAssist Brand Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex items-center gap-3 bg-white/80 dark:bg-[#1C1427]/80 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#E5D5C4] dark:border-[#493B50] shadow-sm"
-        >
-          <div className="relative w-7 h-7 rounded-full overflow-hidden border border-[#E67E48]">
-            <Image
-              src="/railassist-logo.png"
-              alt="RailAssist AI"
-              width={28}
-              height={28}
-              className="object-cover"
-              priority
-            />
-          </div>
-          <span className="text-xs font-bold tracking-tight text-[#302638] dark:text-[#F8EFE4]">
-            RailAssist AI
-          </span>
-          <span className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-400 font-bold border border-emerald-300 dark:border-emerald-700/50">
-            OFFICIAL HELP DESK
-          </span>
-        </motion.div>
-
+      <header className="relative z-30 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 flex items-center justify-end">
         {/* Quick Actions (Skip & Theme Toggle) */}
         <div className="flex items-center gap-2">
           {/* Sun/Moon Mode Toggle */}
@@ -372,7 +346,7 @@ export function WelcomeSplashScreen({ onComplete, standalone = true }: WelcomeSp
       {/* ======================================================== */}
       {/* 4. CINEMATIC HERO & INTRO SEQUENCE                       */}
       {/* ======================================================== */}
-      <main className="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto py-10">
+      <main className="relative z-30 flex-1 flex flex-col items-center justify-center text-center px-4 max-w-4xl mx-auto pt-4 pb-48 sm:pb-56">
         
         {/* Step 2+: Large Center Logo Entry */}
         <AnimatePresence>
